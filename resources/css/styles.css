@@ -1,0 +1,210 @@
+ /* ----------------------------------------------- */
+/* Configurações Básicas */
+/* ----------------------------------------------- */
+
+/*Zerando bordas para ter maior domínio sobre os box*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #fff; /*Define a cor do fundo*/
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif; /*a terceira opção é qualquer fonte daquela família, note que o nome da família não esta entre aspas.*/
+  font-weight: 300; /*de acordo com a fonte que importamos*/
+  font-size: 20px;
+  text-rendering: optimizeLegibility; /*otimiza a renderização da fonte para letura, tendo uma melhor qualidade*/
+}
+
+header{
+  height: 100vh;
+  background-image: url(./img/background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+}
+
+header .logo {
+  width: 100px;
+  margin-left: 40px;
+  filter: invert(98%) sepia(0%) saturate(0%) hue-rotate(145deg) brightness(101%) contrast(105%);
+}
+
+header .main-nav {
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  font-weight: bold;
+  margin-left: 30%;
+
+  text-transform: uppercase;
+}
+
+.main-nav li a {
+  border-bottom: 2px solid transparent;
+}
+
+header .main-nav li a:hover,
+header .main-nav li a:active {
+  padding-bottom: 4px;
+  border-bottom: 2px solid white;
+  transition: border-bottom 0.3s;
+}
+
+header h1{
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+
+  word-spacing: 10px;
+  letter-spacing: 4px;
+
+  margin-bottom: 15px;
+}
+
+.headerTextBox {
+  position: absolute;
+  top: 40%;
+  left: 4%;
+}
+
+.btn:link,
+.btn:visited {
+  border: solid 2px white;
+  border-radius: 10px;
+  padding: 5px 25px;
+  margin-right: 10px;
+  font-weight: bold;
+
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: white;
+  color: #777;
+}
+
+.btn-full:hover {
+  background-color: #777;
+  color: white;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  background-color: none;
+  color: white;
+}
+
+.btn-ghost:hover {
+  background-color: #777;
+  color: white;
+}
+
+.section-features {
+  margin: 20px 10%;
+}
+
+.section-features>div {
+  text-align: center;
+}
+
+.section-features h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+.section-features h2::after {
+  content: " ";
+  height: 3px;
+  width: 100px;
+  background-color: purple;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.section-features .long.copy {
+  line-height: 1.5rem;
+}
+
+.section-features ion-icon {
+  font-size: 40px;
+  color: purple;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.section-features h3 {
+  margin-bottom: 20px;
+}
+
+.section-galery {
+  display: flex;
+  padding: 16px;
+  background-color: #000;
+}
+
+.section-galery > div {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.section-galery img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  border: 1px solid #555;
+}
+
+@media(max-width: 500px) {
+  .section-galery > div {
+    grid-template-columns: 1fr;
+    }
+
+  .span-1-of-4 {
+    width: 100% !important;
+  }
+}
+
+@media(max-width: 800px) and (min-width: 500px) {
+  .section-galery > div {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    .span-1-of-4 {
+      width: 100% !important;
+    }
+  }
+
+@media(max-width: 1300px) and (min-width: 800px) {
+  .section-galery > div {
+    grid-template-columns: repeat(3, 1fr);
+    }
+    .span-1-of-4 {
+      width: 48% !important;
+    }
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s;
+  opacity: 1;
+}
